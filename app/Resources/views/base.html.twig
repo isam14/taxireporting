@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <title>
+            {% block title %}Les Taxis{% endblock %}
+        </title>
+        {% block stylesheets %}{% endblock %}
+        <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"/>
+    </head>
+    <body>
+        {% block navbar %}
+            <nav class="navbar navbar-dark bg-dark">
+                <span class="navbar-brand mb-0 h1"></span>
+            </nav>
+
+        {% endblock %}
+        {% block body %}{% endblock %}
+        <script src="{{ asset('js/bootstrap.js') }}"></script>
+        <script src="{{ asset('js/jquery.min.js') }}"></script>
+
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>

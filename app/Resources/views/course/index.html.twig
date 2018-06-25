@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{# {% block stylesheets %}
+    <link rel="stylesheet" href="{{ path('https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css') }}">
+{% endblock %} #}
+{% block body %}
+    <h1 class="text-center p-3 mb-2 bg-dark text-white">Reporting Par Chauffeur de Taxi</h1>
+
+    <table id="chauffeur" class="table table-striped">
+        <tbody>
+            {% for courses in courses %}
+                <tr>
+                    <th>Chauffeur</th>
+                    <th>Id course</th>
+                    <th>Lieu de départ</th>
+                    <th>Lieu d'arrivée</th>
+                    <th>Distance</th>
+                </tr>
+                <tr>
+                    <td>{{ courses.chauffeur }}</td>
+                    <td>{{ courses.id }}</td>
+                    <td>{{ courses.adresseDpt }}</td>
+                    <td>{{ courses.adresseArr }}</td>
+                    <td>{{ courses.distance }}</td>
+                </tr>
+
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('admin_course_new') }}">Create a new course</a>
+        </li>
+    </ul>
+{% endblock %}
+
+{# {% block javascripts %}
+<script type="text/javascript" src="{{ path('https://code.jquery.com/jquery-3.3.1.js')}}"></script>
+    <script type="text/javascript" src="{{ url('https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js')}}"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#chauffeur').DataTable();
+        });     </script>
+{% endblock %} #}
+
